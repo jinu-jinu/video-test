@@ -1,27 +1,21 @@
 import { Canvas } from '@react-three/fiber';
+import { Perf } from 'r3f-perf';
+import Particle from './particle/Particle';
+import * as THREE from 'three';
 import Video from './Video';
-import Video2 from './Video2';
-
-/*
-  실험1
-
-  비디오가 나오는지 확인
-
-  실험2
-
-  scrolltrigger에 z축 mesh도 걸리는지 확인
-
-  실험3
-
-  파티클을 좀 더 자연스럽게 이동하게 만들어보기
-*/
 
 function App() {
   return (
     <Canvas gl={{ antialias: false }} dpr={window.devicePixelRatio} className="canvas">
+      <Perf />
       <ambientLight />
       <Video />
-      <Video2 />
+      {/* <Particle
+        position={[0, 0, -5]}
+        model="rabbit"
+        color1={new THREE.Color('#ff00c3')}
+        color2={new THREE.Color('#fbcb09')}
+      /> */}
     </Canvas>
   );
 }
