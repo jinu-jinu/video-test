@@ -7,9 +7,8 @@ const Video = () => {
     res.loop = true;
     res.muted = true;
     res.autoplay = true;
-    res.innerHTML = `
-      <source src='/video/pt1-01.mp4' type="video/mp4" />
-    `;
+    res.playsInline = true;
+    res.src = '/video/pt1-01.mp4';
 
     res.play();
 
